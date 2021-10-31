@@ -7,7 +7,7 @@ header {
 }
 
 
-.player-hand {
+#player-hand {
     display: flex;
     justify-content: center;
     background: rgb(26,153,232);
@@ -16,7 +16,7 @@ background: linear-gradient(0deg, rgba(26,153,232,1) 0%, rgba(25,106,156,1) 100%
 
 /*******LINEPO*********/
 
-.line {
+#game-line {
     height: 400px;
     display: flex;
     justify-content: center;
@@ -38,8 +38,8 @@ background: linear-gradient(0deg, rgba(26,153,232,1) 0%, rgba(25,106,156,1) 100%
 
 .flip-card {
     background-color: transparent;
-    width: 300px;
     height: 200px;
+    width: 300px;
     perspective: 1000px;
 }
 
@@ -75,8 +75,8 @@ background: linear-gradient(0deg, rgba(26,153,232,1) 0%, rgba(25,106,156,1) 100%
 }
 
 .draggable {
-    width: 300px;
-    height: 200px;
+    height: 300px;
+    width: 200px;
 }
 
 
@@ -97,7 +97,7 @@ background: linear-gradient(0deg, rgba(26,153,232,1) 0%, rgba(25,106,156,1) 100%
     border-radius: 8px;
     background-color: white;
     color: black;
-    border: 2px solid #196A9C#;
+    border: 2px solid #196A9C;
     
 }
 

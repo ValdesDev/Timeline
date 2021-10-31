@@ -7,7 +7,6 @@
     <title>TimeLine</title>
     <link rel="stylesheet" href="styles\style.css" />
     <script src="scripts/main.js"></script>
-    <script src="scripts/drag.js"></script>
   </head>
   <body>
     <div class="main"></div>
@@ -25,7 +24,7 @@
 
       <div class="score">Score</div>
     </header>
-    <div class="line">
+    <div id="game-line">
         <div class="dropzone"></div>
         <!-- <div class="initial-card">
       <div class="flip-card">
@@ -48,7 +47,7 @@
       </div>
         </div> -->
     </div>
-    <div class="player-hand">
+    <div id="player-hand">
       <div class="flip-card" class="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -140,5 +139,6 @@
         </div>
       </div>
     </div>
+    <script src="scripts/drag.js"></script>
   </body>
 </html>

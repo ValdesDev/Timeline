@@ -1,52 +1,80 @@
 var dragged;
 
-  /* events fired on the draggable target */
-  document.addEventListener("drag", function( event ) {
+/* DOM HTML ELEMENTS*/
 
-  }, false);
+const playerHand = document.getElementById("player-hand");
+const gameLine = document.getElementById("game-line");
 
-  document.addEventListener("dragstart", function( event ) {
-      // store a ref. on the dragged elem
-      dragged = event.target;
-      // make it half transparent
-      event.target.style.opacity = .5;
-  }, false);
 
-  document.addEventListener("dragend", function( event ) {
-      // reset the transparency
-      event.target.style.opacity = "";
-  }, false);
+/*******VISUAL EFFECT OPACITY *******/
+playerHand.addEventListener(
+  "dragstart",
+  function (event) {
+    // store a ref. on the dragged elem
+    console.log(event.target)
+    dragged = event.target.parentNode.parentNode;
+    console.log( "holi",dragged);
+    // make it half transparent
+    event.target.style.opacity = 0.5;
+  },
+  false
+);
 
-  /* events fired on the drop targets */
-  document.addEventListener("dragover", function( event ) {
-      // prevent default to allow drop
-      event.preventDefault();
-  }, false);
+playerHand.addEventListener(
+  "dragend",
+  function (event) {
+    // reset the transparency
+    event.target.style.opacity = "";
+  },
+  false
+);
 
-  document.addEventListener("dragenter", function( event ) {
-      // highlight potential drop target when the draggable element enters it
-      if ( event.target.className == "dropzone" ) {
-          event.target.style.background = "#196A9C";
-      }
+/* events fired on the drop targets */
+document.addEventListener(
+  "dragover",
+  function (event) {
+    // prevent default to allow drop
+    event.preventDefault();
+  },
+  false
+);
 
-  }, false);
+/********VISUAL EFFECT DROPZONE*******/
+gameLine.addEventListener(
+  "dragenter",
+  function (event) {
+    // highlight potential drop target when the draggable element enters it
+    if (dragged && event.target.className === "dropzone") {
+      event.target.style.background = "#196A9C";
+    }
+  },
+  false
+);
 
-  document.addEventListener("dragleave", function( event ) {
-      // reset background of potential drop target when the draggable element leaves it
-      if ( event.target.className == "dropzone" ) {
-          event.target.style.background = "";
-      }
+gameLine.addEventListener(
+  "dragleave",
+  function (event) {
+    // reset background of potential drop target when the draggable element leaves it
+    if (event.target.className === "dropzone") {
+      event.target.style.background = "";
+    }
+  },
+  false
+);
 
-  }, false);
-
-  document.addEventListener("drop", function( event ) {
-      // prevent default action (open as link for some elements)
-      event.preventDefault();
-      // move dragged elem to the selected drop target
-      if ( event.target.className == "dropzone" ) {
-          event.target.style.background = "";
-          dragged.parentNode.removeChild( dragged );
-          event.target.appendChild( dragged );
-      }
-    
-  }, false);
+/******PREVENT DEFAULT EFFECT & DROP CARD AT DROPZONE */
+document.addEventListener(
+  "drop",
+  function (event) {
+    // prevent default action (open as link for some elements)
+    event.preventDefault();
+    // move dragged elem to the selected drop target
+    if (event.target.className === "dropzone") {
+      event.target.style.background = "";
+      dragged.parentNode.removeChild(dragged);
+      event.target.appendChild(dragged);
+    }
+    dragged = null;
+  },
+  false
+);
