@@ -13,7 +13,6 @@ playerHand.addEventListener(
     // store a ref. on the dragged elem
     console.log(event.target)
     dragged = event.target.parentNode.parentNode;
-    console.log( "holi",dragged);
     // make it half transparent
     event.target.style.opacity = 0.5;
   },
@@ -73,8 +72,13 @@ document.addEventListener(
       event.target.style.background = "";
       dragged.parentNode.removeChild(dragged);
       event.target.appendChild(dragged);
+      setTimeout(function(){
+           dragged.style.transform ="rotateY(180deg)";
+           dragged = null;
+        }, 1000);
+    } else{
+        dragged = null;
     }
-    dragged = null;
   },
   false
 );
