@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeLine</title>
+    <link rel="stylesheet" href="styles\style.css" />
+    <script src="scripts/main.js"></script>
+    <script src="scripts/drag.js"></script>
+  </head>
+  <body>
+    <div class="main"></div>
+    <header>
+      <div class="selector">
+        <button class="btn">Play!</button>
+        <button class="btn">Rules</button>
+      </div>
+
+      <img
+        id="Logo"
+        src="images/timeline-logo-transparente.png"
+        alt="Time Line Logo"
+      />
+
+      <div class="score">Score</div>
+    </header>
+    <div class="line">
+        <div class="dropzone"></div>
+        <!-- <div class="initial-card">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="card"
+              src="images/cards/almoravides B.png"
+              alt="Los Almoravides invaden Al Ándalus"
+            />
+          </div>
+          <div class="flip-card-back">
+            <img
+              class="card"
+              src="images/cards/almoravides A.png"
+              alt="Los Almoravides invaden Al Ándalus"
+            />
+          </div>
+        </div>
+      </div>
+        </div> -->
+    </div>
+    <div class="player-hand">
+      <div class="flip-card" class="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="card"
+              src="images/cards/1rep B.png"
+              alt="Primera República Española"
+            />
+          </div>
+          <div class="flip-card-back">
+            <img
+              class="card"
+              src="images/cards/1rep A.png"
+              alt="Primera República Española"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="card"
+              src="images/cards/3may B.png"
+              alt="Fusilamientos en la Moncola"
+            />
+          </div>
+          <div class="flip-card-back">
+            <img
+              class="card"
+              src="images/cards/3may A.png"
+              alt="Fusilamientos en la Moncola"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="card"
+              src="images/cards/Acueducto B.png"
+              alt="Construcción del acueducto de Segovia"
+            />
+          </div>
+          <div class="flip-card-back">
+            <img
+              class="card"
+              src="images/cards/Acueducto A.png"
+              alt="Construcción del acueducto de Segovia"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="card"
+              src="images/cards/Al an B.png"
+              alt="Hispania se convierte en Al Ándalus"
+            />
+          </div>
+          <div class="flip-card-back">
+            <img
+              class="card"
+              src="images/cards/Al an A.png"
+              alt="Hispania se convierte en Al Ándalus"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              class="card"
+              src="images/cards/alba B.png"
+              alt="Comienza el Ducado de Alba"
+            />
+          </div>
+          <div class="flip-card-back">
+            <img
+              class="card"
+              src="images/cards/alba A.png"
+              alt="Comienza el Ducado de Alba"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
