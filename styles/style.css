@@ -1,103 +1,105 @@
 body {
-margin:0;
+  margin: 0;
 }
 
 /**************HEADER*****************/
 
 header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #E9B90F;
+  display: flex;
+  justify-content: space-between;
+  background-color: #e9b90f;
 }
-
 
 #player-hand {
-    display: flex;
-    justify-content: center;
-    background: rgb(26,153,232);
-background: linear-gradient(0deg, rgba(26,153,232,1) 0%, rgba(25,106,156,1) 100%);
+  display: flex;
+  justify-content: center;
+  background: rgb(26, 153, 232);
+  background: linear-gradient(
+    0deg,
+    rgba(26, 153, 232, 1) 0%,
+    rgba(25, 106, 156, 1) 100%
+  );
 }
 
-/*******LINEPO*********/
+/*******POSITIONLINE*********/
 
 #game-line {
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(25,106,156);
-    background: linear-gradient(0deg, rgba(25,106,156,1) 0%, rgba(233,185,15,1) 100%);
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(25, 106, 156);
+  background: linear-gradient(
+    0deg,
+    rgba(25, 106, 156, 1) 0%,
+    rgba(233, 185, 15, 1) 100%
+  );
 }
 
+.initial-position {
+  height: 300px;
+  width: 200px;
+  background-color: indigo;
+}
 
-
-
-/*******CARTAS******/
+/*******CARDS******/
 div.card {
-    height: 200px;
-    width: 300px;
+  height: 200px;
+  width: 300px;
 }
- img.card {
-    background-color: transparent;
-    height: 300px;
-    width: 200px;
+img.card {
+  background-color: transparent;
+  height: 300px;
+  width: 200px;
 }
 
-/****** GIRO DE CARTA*******/
-
-
+/******FLIP*******/
 
 .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 
 .flip-card-back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /*****DRAG&DROP******/
 .dropzone {
-    height: 300px;
-    width: 200px;
-    background: #1A99E8;
+  height: 300px;
+  width: 200px;
+  background: #1a99e8;
 }
 
 .draggable {
-    height: 300px;
-    width: 200px;
+  height: 300px;
+  width: 200px;
 }
-
-
 
 /****** Otras cosas******/
 .selector {
-
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .btn {
-    font-size: 16px;
-    padding: 10px 24px;
-    margin: 5px;;
-    border-radius: 8px;
-    background-color: white;
-    color: black;
-    border: 2px solid #196A9C;
-    
+  font-size: 16px;
+  padding: 10px 24px;
+  margin: 5px;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+  border: 2px solid #196a9c;
 }
-
-

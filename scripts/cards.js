@@ -1,4 +1,4 @@
-let cards = [
+export let cards = [
   {
     name: "Primera República Española",
     year: 1873,

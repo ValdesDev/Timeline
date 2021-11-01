@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TimeLine</title>
     <link rel="stylesheet" href="styles\style.css" />
+    <script src="scripts/cards.js" type="module"></script>
     <script src="scripts/main.js"></script>
   </head>
   <body>
     <div class="main">
     <header>
       <div class="selector">
-        <button class="btn">Play!</button>
+        <button class="btn" id="start">Play!</button>
         <button class="btn">Rules</button>
       </div>
 
@@ -26,26 +27,8 @@
     </header>
     <div id="game-line">
         <div class="dropzone"></div>
-        <!-- <div class="initial-card">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              class="card"
-              src="images/cards/almoravides B.png"
-              alt="Los Almoravides invaden Al Ándalus"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              class="card"
-              src="images/cards/almoravides A.png"
-              alt="Los Almoravides invaden Al Ándalus"
-            />
-          </div>
-        </div>
-      </div>
-        </div> -->
+        <div class="initial-position"></div>
+        <div class="dropzone"></div>
     </div>
     <div id="player-hand">
       <div class="card" class="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
@@ -141,5 +124,6 @@
     </div>
   </div>
     <script src="scripts/drag.js"></script>
+    <script src="scripts/game.js" type="module"></script>
   </body>
 </html>

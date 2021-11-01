@@ -11,7 +11,6 @@ playerHand.addEventListener(
   "dragstart",
   function (event) {
     // store a ref. on the dragged elem
-    console.log(event.target)
     dragged = event.target.parentNode.parentNode;
     // make it half transparent
     event.target.style.opacity = 0.5;
