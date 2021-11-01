@@ -1,11 +1,18 @@
 
 export function compareYears (dragged){
     const droppedYear =dragged.getElementsByTagName("img")[0].id;
-    const rigthCard =dragged.parentNode.nextSibling;
-    if(rigthCard !== null){
-        rigthCard = rigthCard.id;
+    let rigthYear =dragged.parentNode.nextSibling;
+    let leftYear =dragged.parentNode.previousSibling;
+    if(rigthYear){
+        rigthYear = rigthYear.id;
     }
-    console.log("LA CARTA",rigthCard);
-    console.log(dragged.parentNode.nextSibling);
+    if(leftYear){
+        leftYear = leftYear.id;
+    }
+    if((droppedYear<rigthYear || !rigthYear)&&(droppedYear>leftYear || !leftYear)){
+        console.log("posicion correcta!");
+    }else{
+        console.log("incorrecto");
+    }
 
 }
