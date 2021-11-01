@@ -1,5 +1,5 @@
 import { cards } from "./cards.js";
-const cardArray = cards.map((card) => card);
+let cardArray = cards.map((card) => card);
 
 /*****DOM HTML ELEMENTS*******/
 const buttonStart = document.getElementById("start");
@@ -7,8 +7,11 @@ const gameLine = document.getElementById("game-line");
 
 /******FUNTIONS*********/
 
-function getRandomCard(cardArray) {
-  return cardArray[Math.floor(Math.random() * cardArray.length)];
+function getRandomCard(deck) {
+  const randomCard = deck[Math.floor(Math.random() * deck.length)];
+  cardArray = deck.filter(card => randomCard !==card);
+  console.log(cardArray);
+  return randomCard;
 }
 
 function getHtmlImgElement(card) {
@@ -34,7 +37,6 @@ buttonStart.addEventListener(
       gameLine.insertBefore(getHtmlDropZone(), gameLine.childNodes[0]);
       gameLine.appendChild(getHtmlDropZone());
     }, 1000);
-    console.log(getRandomCard(cards).imageBack);
   },
   false
 );

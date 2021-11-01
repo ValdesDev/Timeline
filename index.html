@@ -11,119 +11,131 @@
   </head>
   <body>
     <div class="main">
-    <header>
-      <div class="selector">
-        <button class="btn" id="start">Play!</button>
-        <button class="btn">Rules</button>
-      </div>
+      <header>
+        <div class="selector">
+          <button class="btn" id="start">Play!</button>
+          <button class="btn">Rules</button>
+        </div>
 
-      <img
-        id="Logo"
-        src="images/timeline-logo-transparente.png"
-        alt="Time Line Logo"
-      />
+        <img
+          id="Logo"
+          src="images/timeline-logo-transparente.png"
+          alt="Time Line Logo"
+        />
 
-      <div class="score">Score</div>
-    </header>
-    <div id="game-line">
-        <!-- <div class="dropzone"></div>
-        <div class="initial-position"></div>
-        <div class="dropzone"></div> -->
+        <div class="score">Score</div>
+      </header>
+      <div id="game-line"></div>
+      <div id="player-hand">
+        <div
+          class="card"
+          class="draggable"
+          draggable="true"
+          ondragstart="event.dataTransfer.setData('text/plain',null)"
+        >
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                id="1873"
+                class="card"
+                src="images/cards/1rep B.png"
+                alt="Primera República Española"
+              />
+            </div>
+            <div class="flip-card-back">
+              <img
+                id="1873"
+                class="card"
+                src="images/cards/1rep A.png"
+                alt="Primera República Española"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                id="1808"
+                class="card"
+                src="images/cards/3may B.png"
+                alt="Fusilamientos en la Moncola"
+              />
+            </div>
+            <div class="flip-card-back">
+              <img
+                id="1808"
+                class="card"
+                src="images/cards/3may A.png"
+                alt="Fusilamientos en la Moncola"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                id="-116"
+                class="card"
+                src="images/cards/Acueducto B.png"
+                alt="Construcción del acueducto de Segovia"
+              />
+            </div>
+            <div class="flip-card-back">
+              <img
+                id="-116"
+                class="card"
+                src="images/cards/Acueducto A.png"
+                alt="Construcción del acueducto de Segovia"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                id="716"
+                class="card"
+                src="images/cards/Al an B.png"
+                alt="Hispania se convierte en Al Ándalus"
+              />
+            </div>
+            <div class="flip-card-back">
+              <img
+                id="716"
+                class="card"
+                src="images/cards/Al an A.png"
+                alt="Hispania se convierte en Al Ándalus"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                id="1472"
+                class="card"
+                src="images/cards/alba B.png"
+                alt="Comienza el Ducado de Alba"
+              />
+            </div>
+            <div class="flip-card-back">
+              <img
+                id="1472"
+                class="card"
+                src="images/cards/alba A.png"
+                alt="Comienza el Ducado de Alba"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="player-hand">
-      <div class="card" class="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              class="card"
-              src="images/cards/1rep B.png"
-              alt="Primera República Española"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              class="card"
-              src="images/cards/1rep A.png"
-              alt="Primera República Española"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              class="card"
-              src="images/cards/3may B.png"
-              alt="Fusilamientos en la Moncola"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              class="card"
-              src="images/cards/3may A.png"
-              alt="Fusilamientos en la Moncola"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              class="card"
-              src="images/cards/Acueducto B.png"
-              alt="Construcción del acueducto de Segovia"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              class="card"
-              src="images/cards/Acueducto A.png"
-              alt="Construcción del acueducto de Segovia"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              class="card"
-              src="images/cards/Al an B.png"
-              alt="Hispania se convierte en Al Ándalus"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              class="card"
-              src="images/cards/Al an A.png"
-              alt="Hispania se convierte en Al Ándalus"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <img
-              class="card"
-              src="images/cards/alba B.png"
-              alt="Comienza el Ducado de Alba"
-            />
-          </div>
-          <div class="flip-card-back">
-            <img
-              class="card"
-              src="images/cards/alba A.png"
-              alt="Comienza el Ducado de Alba"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <script src="scripts/drag.js"></script>
+    <script src="scripts/compare.js" type="module"></script>
+    <script src="scripts/drag.js" type="module"></script>
     <script src="scripts/game.js" type="module"></script>
   </body>
 </html>
