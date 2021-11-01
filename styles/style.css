@@ -53,6 +53,12 @@ img.card {
   width: 200px;
 }
 
+.rotate {
+  -webkit-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
+}
+
 /******FLIP*******/
 
 .flip-card-inner {
@@ -103,4 +109,3 @@ img.card {
   color: black;
   border: 2px solid #196a9c;
 }
-

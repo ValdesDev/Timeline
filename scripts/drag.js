@@ -66,14 +66,13 @@ document.addEventListener(
   "drop",
   function (event) {
     event.preventDefault();
-    console.log(event.target);
     if (event.target.className === "dropzone") {
       event.target.style.background = "";
       dragged.parentNode.removeChild(dragged);
       event.target.appendChild(dragged);
-      compareYears(dragged);
       setTimeout(function(){
            dragged.style.transform ="rotateY(180deg)";
+           compareYears(dragged);
            dragged = null;
         }, 1000);
     } else{
