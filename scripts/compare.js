@@ -1,4 +1,5 @@
-import { getHtmlDropZone, gameLine } from "./game.js";
+import { getHtmlDropZone } from "./game.js";
+import { gameLine } from "./main.js";
 
 export function compareYears(dragged) {
   const droppedYear = Number(dragged.getElementsByTagName("img")[0].id);
@@ -24,7 +25,7 @@ export function compareYears(dragged) {
 
 function success(dragged) {
   let newPosition = dragged.parentNode;
-  
+
   setTimeout(function () {
     gameLine.insertBefore(getHtmlDropZone(), newPosition);
     newPosition.after(getHtmlDropZone());
@@ -43,4 +44,3 @@ function failure(dragged) {
     dragged.parentNode.removeChild(dragged);
   }, 1500);
 }
-

@@ -1,19 +1,16 @@
-import {compareYears} from "./compare.js";
+import { compareYears } from "./compare.js";
+import { getNewFlipCardInner } from "./game.js";
+import { playerHand, gameLine } from "./main.js";
+
+/*VARIABLES*/
+
 var dragged;
-
-/* DOM HTML ELEMENTS*/
-
-const playerHand = document.getElementById("player-hand");
-const gameLine = document.getElementById("game-line");
-
 
 /*******VISUAL EFFECT OPACITY *******/
 playerHand.addEventListener(
   "dragstart",
   function (event) {
-    // store a ref. on the dragged elem
     dragged = event.target.parentNode.parentNode;
-    // make it half transparent
     event.target.style.opacity = 0.5;
   },
   false
@@ -22,7 +19,6 @@ playerHand.addEventListener(
 playerHand.addEventListener(
   "dragend",
   function (event) {
-    // reset the transparency
     event.target.style.opacity = "";
   },
   false
@@ -68,15 +64,18 @@ document.addEventListener(
     event.preventDefault();
     if (event.target.className === "dropzone") {
       event.target.style.background = "";
+      dragged.parentNode.appendChild(getNewFlipCardInner());
+      console.log("Antes",dragged.parentNode);
       dragged.parentNode.removeChild(dragged);
+      
       event.target.appendChild(dragged);
-      setTimeout(function(){
-           dragged.style.transform ="rotateY(180deg)";
-           compareYears(dragged);
-           dragged = null;
-        }, 1000);
-    } else{
+      setTimeout(function () {
+        dragged.style.transform = "rotateY(180deg)";
+        compareYears(dragged);
         dragged = null;
+      }, 1000);
+    } else {
+      dragged = null;
     }
   },
   false

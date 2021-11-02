@@ -1,10 +1,9 @@
 import { cards } from "./cards.js";
-let cardArray = cards.map((card) => card);
+import { buttonStart, gameLine } from "./main.js";
 
-/*****DOM HTML ELEMENTS*******/
-export const gameLine = document.getElementById("game-line");
-const buttonStart = document.getElementById("start");
-const playerHand = document.getElementById("player-hand");
+/*VARIABLES*/
+
+let cardArray = cards.map((card) => card);
 
 /******FUNCTIONS*********/
 
@@ -14,28 +13,58 @@ export function getHtmlDropZone() {
   return newDropZone;
 }
 
+export function getNewFlipCardInner() {
+  const newFlipCardInner = document.createElement("div");
+  newFlipCardInner.setAttribute("class", "flip-card-inner");
+  const randomCard = getRandomCard(cardArray);
+  newFlipCardInner.appendChild(getNewFlipCardFront(randomCard));
+  newFlipCardInner.appendChild(getNewFlipCardBack(randomCard));
+  return newFlipCardInner;
+}
+
 function getRandomCard(deck) {
   const randomCard = deck[Math.floor(Math.random() * deck.length)];
-  cardArray = deck.filter(card => randomCard !==card);
+  cardArray = deck.filter((card) => randomCard !== card);
   return randomCard;
 }
 
-function getHtmlImgElement(card) {
+function getHtmlBackImg(card) {
   let image = document.createElement("img");
   image.setAttribute("class", "card");
-  image.setAttribute("id",card.year);
+  image.setAttribute("id", card.year);
   image.setAttribute("src", card.imageBack);
   return image;
 }
 
+function getHtmlFrontImg(card) {
+  let image = document.createElement("img");
+  image.setAttribute("class", "card");
+  image.setAttribute("id", card.year);
+  image.setAttribute("src", card.image);
+  return image;
+}
 
+
+function getNewFlipCardFront(card){
+    const newFlipCardFront = document.createElement("div");
+    newFlipCardFront.setAttribute("class", "flip-card-front");
+    newFlipCardFront.appendChild(getHtmlFrontImg(card));
+    return newFlipCardFront;
+}
+
+function getNewFlipCardBack(card){
+    const newFlipCardBack = document.createElement("div");
+    newFlipCardBack.setAttribute("class", "flip-card-back");
+    newFlipCardBack.appendChild(getHtmlBackImg(card));
+    return newFlipCardBack;
+}
 
 /****START GAME********/
 buttonStart.addEventListener(
   "click",
 
   function () {
-    gameLine.appendChild(getHtmlImgElement(getRandomCard(cardArray)));
+    gameLine.appendChild(getHtmlBackImg(getRandomCard(cardArray)));
     setTimeout(function () {
       gameLine.insertBefore(getHtmlDropZone(), gameLine.childNodes[0]);
       gameLine.appendChild(getHtmlDropZone());
