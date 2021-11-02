@@ -2,7 +2,7 @@ export let cards = [
   {
     name: "Primera República Española",
     year: 1873,
-    imageFront: "images/cards/1rep B.png",
+    image: "images/cards/1rep B.png",
     imageBack: "images/cards/1rep A.png",
   },
   {

@@ -1,5 +1,5 @@
 import { cards } from "./cards.js";
-import { buttonStart, gameLine } from "./main.js";
+import { buttonStart,gameLine,intialSpaces } from "./main.js";
 
 /*VARIABLES*/
 
@@ -20,6 +20,18 @@ export function getNewFlipCardInner() {
   newFlipCardInner.appendChild(getNewFlipCardFront(randomCard));
   newFlipCardInner.appendChild(getNewFlipCardBack(randomCard));
   return newFlipCardInner;
+}
+
+export function initialHand() {
+  for (let i = 0; i < intialSpaces.length; i++) {
+    intialSpaces[i].appendChild(getNewFlipCardInner());
+  }
+}
+
+function visibleHand(){
+  for (let i = 0; i < intialSpaces.length; i++) {
+    intialSpaces[i].style.opacity=1;
+  }
 }
 
 function getRandomCard(deck) {
@@ -44,20 +56,20 @@ function getHtmlFrontImg(card) {
   return image;
 }
 
-
-function getNewFlipCardFront(card){
-    const newFlipCardFront = document.createElement("div");
-    newFlipCardFront.setAttribute("class", "flip-card-front");
-    newFlipCardFront.appendChild(getHtmlFrontImg(card));
-    return newFlipCardFront;
+function getNewFlipCardFront(card) {
+  const newFlipCardFront = document.createElement("div");
+  newFlipCardFront.setAttribute("class", "flip-card-front");
+  newFlipCardFront.appendChild(getHtmlFrontImg(card));
+  return newFlipCardFront;
 }
 
-function getNewFlipCardBack(card){
-    const newFlipCardBack = document.createElement("div");
-    newFlipCardBack.setAttribute("class", "flip-card-back");
-    newFlipCardBack.appendChild(getHtmlBackImg(card));
-    return newFlipCardBack;
+function getNewFlipCardBack(card) {
+  const newFlipCardBack = document.createElement("div");
+  newFlipCardBack.setAttribute("class", "flip-card-back");
+  newFlipCardBack.appendChild(getHtmlBackImg(card));
+  return newFlipCardBack;
 }
+
 
 /****START GAME********/
 buttonStart.addEventListener(
@@ -65,6 +77,7 @@ buttonStart.addEventListener(
 
   function () {
     gameLine.appendChild(getHtmlBackImg(getRandomCard(cardArray)));
+    visibleHand();
     setTimeout(function () {
       gameLine.insertBefore(getHtmlDropZone(), gameLine.childNodes[0]);
       gameLine.appendChild(getHtmlDropZone());
@@ -72,3 +85,6 @@ buttonStart.addEventListener(
   },
   false
 );
+window.onload = function() {
+  initialHand();
+};

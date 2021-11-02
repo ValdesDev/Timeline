@@ -39,13 +39,14 @@ header {
 .initial-position {
   height: 300px;
   width: 200px;
-  background-color: indigo;
 }
 
 /*******CARDS******/
 .card-container {
   height: 200px;
   width: 300px;
+  opacity: 0;
+  transition: opacity 0.8s;
 }
 img.card {
   background-color: transparent;
@@ -94,7 +95,7 @@ img.card {
 }
 
 /****** Otras cosas******/
-.selector {
+.buttons-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
