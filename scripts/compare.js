@@ -1,3 +1,5 @@
+import { getHtmlDropZone, gameLine } from "./game.js";
+
 export function compareYears(dragged) {
   const droppedYear = Number(dragged.getElementsByTagName("img")[0].id);
   let rigthYear = dragged.parentNode.nextSibling;
@@ -12,18 +14,33 @@ export function compareYears(dragged) {
     (droppedYear < rigthYear || !rigthYear) &&
     (droppedYear > leftYear || !leftYear)
   ) {
-    console.log("posicion correcta!",droppedYear,rigthYear,leftYear);
+    success(dragged);
   } else {
-    wrong(dragged);
+    failure(dragged);
   }
 }
 
-function wrong(dragged){
-    setTimeout(function () {
-        dragged.style.transform = "rotateZ(-30deg) rotateY(180deg)";
-      }, 1000);
-      setTimeout(function () {
-        dragged.parentNode.removeChild(dragged);
-      }, 1500);
+/*****FUNCTIONS SUCCESS&FAILURE*******/
 
+function success(dragged) {
+  let newPosition = dragged.parentNode;
+  
+  setTimeout(function () {
+    gameLine.insertBefore(getHtmlDropZone(), newPosition);
+    newPosition.after(getHtmlDropZone());
+    gameLine.replaceChild(
+      dragged.querySelector(".flip-card-back img"),
+      newPosition
+    );
+  }, 1000);
 }
+
+function failure(dragged) {
+  setTimeout(function () {
+    dragged.style.transform = "rotateZ(-30deg) rotateY(180deg)";
+  }, 1000);
+  setTimeout(function () {
+    dragged.parentNode.removeChild(dragged);
+  }, 1500);
+}
+

@@ -35,5 +35,4 @@ export let cards = [
     image: "images/cards/almoravides B.png",
     imageBack: "images/cards/almoravides A.png",
   }
-
 ];

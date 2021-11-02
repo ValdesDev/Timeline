@@ -2,15 +2,21 @@ import { cards } from "./cards.js";
 let cardArray = cards.map((card) => card);
 
 /*****DOM HTML ELEMENTS*******/
+export const gameLine = document.getElementById("game-line");
 const buttonStart = document.getElementById("start");
-const gameLine = document.getElementById("game-line");
+const playerHand = document.getElementById("player-hand");
 
-/******FUNTIONS*********/
+/******FUNCTIONS*********/
+
+export function getHtmlDropZone() {
+  const newDropZone = document.createElement("div");
+  newDropZone.setAttribute("class", "dropzone");
+  return newDropZone;
+}
 
 function getRandomCard(deck) {
   const randomCard = deck[Math.floor(Math.random() * deck.length)];
   cardArray = deck.filter(card => randomCard !==card);
-  console.log(cardArray);
   return randomCard;
 }
 
@@ -22,12 +28,9 @@ function getHtmlImgElement(card) {
   return image;
 }
 
-function getHtmlDropZone() {
-  const newDropZone = document.createElement("div");
-  newDropZone.setAttribute("class", "dropzone");
-  return newDropZone;
-}
 
+
+/****START GAME********/
 buttonStart.addEventListener(
   "click",
 
