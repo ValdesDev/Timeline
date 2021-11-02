@@ -41,6 +41,7 @@ function failure(dragged) {
     dragged.style.transform = "rotateZ(-30deg) rotateY(180deg)";
   }, 1000);
   setTimeout(function () {
+    dragged.parentNode.classList.remove("dropzone-hover");
     dragged.parentNode.removeChild(dragged);
-  }, 1500);
+  }, 2500);
 }

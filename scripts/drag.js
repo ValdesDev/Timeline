@@ -40,7 +40,7 @@ gameLine.addEventListener(
   function (event) {
     // highlight potential drop target when the draggable element enters it
     if (dragged && event.target.className === "dropzone") {
-      event.target.style.background = "#196A9C";
+      event.target.classList.add("dropzone-hover");
     }
   },
   false
@@ -50,8 +50,8 @@ gameLine.addEventListener(
   "dragleave",
   function (event) {
     // reset background of potential drop target when the draggable element leaves it
-    if (event.target.className === "dropzone") {
-      event.target.style.background = "";
+    if (event.target.className === "dropzone dropzone-hover") {
+      event.target.classList.remove("dropzone-hover");
     }
   },
   false
@@ -62,10 +62,9 @@ document.addEventListener(
   "drop",
   function (event) {
     event.preventDefault();
-    if (event.target.className === "dropzone") {
+    if (event.target.className === "dropzone dropzone-hover") {
       event.target.style.background = "";
       dragged.parentNode.appendChild(getNewFlipCardInner());
-      console.log("Antes",dragged.parentNode);
       dragged.parentNode.removeChild(dragged);
       
       event.target.appendChild(dragged);

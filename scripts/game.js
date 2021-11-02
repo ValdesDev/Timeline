@@ -74,7 +74,6 @@ function getNewFlipCardBack(card) {
 /****START GAME********/
 buttonStart.addEventListener(
   "click",
-
   function () {
     gameLine.appendChild(getHtmlBackImg(getRandomCard(cardArray)));
     visibleHand();
