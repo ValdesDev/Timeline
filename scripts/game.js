@@ -1,5 +1,5 @@
 import { cards } from "./cards.js";
-import { buttonStart, gameLine, intialSpaces,buttonsReset} from "./main.js";
+import { buttonStart,buttonReset,buttonRules,buttonBack,gameLine, intialSpaces,ruleBox} from "./main.js";
 
 /*VARIABLES*/
 
@@ -79,6 +79,7 @@ function removeAllChildNodes(parent) {
 function removePlayerHand(intialSpaces) {
   for (let i = 0; i < intialSpaces.length; i++) {
     removeAllChildNodes(intialSpaces[i]);
+    intialSpaces[i].style.opacity = 0;
   }
 }
 
@@ -88,6 +89,9 @@ buttonStart.addEventListener(
   function () {
     gameLine.appendChild(getHtmlBackImg(getRandomCard(cardArray)));
     visibleHand();
+
+
+
     setTimeout(function () {
       gameLine.insertBefore(getHtmlDropZone(), gameLine.childNodes[0]);
       gameLine.appendChild(getHtmlDropZone());
@@ -100,11 +104,14 @@ window.onload = function () {
 };
 
 /********RESET GAME*********/
-buttonsReset.addEventListener(
+buttonReset.addEventListener(
   "click",
   function () {
     removeAllChildNodes(gameLine);
     removePlayerHand(intialSpaces);
+    setTimeout(function(){
+      initialHand();
+    },1000)
   },
   false
 );
