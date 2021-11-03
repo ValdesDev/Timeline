@@ -1,5 +1,6 @@
 import { cards } from "./cards.js";
-import { buttonStart,buttonReset,buttonRules,buttonBack,gameLine, intialSpaces,ruleBox} from "./main.js";
+import { buttonStart,buttonReset,gameLine, intialSpaces} from "./main.js";
+import {saveScore} from "./compare.js";
 
 /*VARIABLES*/
 
@@ -89,9 +90,6 @@ buttonStart.addEventListener(
   function () {
     gameLine.appendChild(getHtmlBackImg(getRandomCard(cardArray)));
     visibleHand();
-
-
-
     setTimeout(function () {
       gameLine.insertBefore(getHtmlDropZone(), gameLine.childNodes[0]);
       gameLine.appendChild(getHtmlDropZone());
@@ -109,6 +107,8 @@ buttonReset.addEventListener(
   function () {
     removeAllChildNodes(gameLine);
     removePlayerHand(intialSpaces);
+    saveScore(0);
+    cardArray = cards.map((card) => card);
     setTimeout(function(){
       initialHand();
     },1000)

@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TimeLine</title>
     <link rel="stylesheet" href="styles\style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,300&display=swap"
+      rel="stylesheet"
+    />
     <script src="scripts/cards.js" type="module"></script>
   </head>
   <body>
@@ -24,7 +30,7 @@
       <header>
         <div class="buttons-container">
           <button class="btn" id="start">Jugar!</button>
-          <button class="btn" id="reset">Reset</button>
+          <button class="btn" id="reset">Reinicio</button>
           <button class="btn" id="rules">Reglas</button>
         </div>
 
@@ -34,7 +40,9 @@
           alt="Time Line Logo"
         />
 
-        <div class="score">Score</div>
+        <div class="score-box">
+          <div>Puntuación: <span id="score">0</span></div>
+        </div>
       </header>
       <div id="game-line"></div>
       <div id="player-hand">

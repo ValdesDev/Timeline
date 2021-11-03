@@ -1,9 +1,11 @@
 body {
   width: 100%;
   margin: 0;
+  font-family: "Averia Serif Libre", cursive;
 }
 main {
   width: 100%;
+  font-family: "Averia Serif Libre", cursive;
 }
 
 #rules-box {
@@ -37,6 +39,11 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: #e9b90f;
+  padding: 2em;
+}
+
+.score-box {
+  font-size: 1.5em;
 }
 
 /*******POSITIONLINE*********/
@@ -85,6 +92,7 @@ img.card {
   height: 300px;
   width: 200px;
   min-width: 200px;
+  border-radius: 15px;
 }
 
 .rotate {
@@ -178,4 +186,5 @@ div::-webkit-scrollbar-thumb {
   background-color: white;
   color: black;
   border: 2px solid #196a9c;
+  font-family: "Averia Serif Libre", cursive;
 }

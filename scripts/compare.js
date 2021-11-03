@@ -1,5 +1,7 @@
 import { getHtmlDropZone } from "./game.js";
-import { gameLine } from "./main.js";
+import { gameLine, score } from "./main.js";
+
+let playerScore = 0;
 
 export function compareYears(dragged) {
   const droppedYear = Number(dragged.getElementsByTagName("img")[0].id);
@@ -21,11 +23,18 @@ export function compareYears(dragged) {
   }
 }
 
+export function saveScore(newScore){
+  playerScore = newScore;
+  score.innerText = playerScore;
+}
+
+
+
 /*****FUNCTIONS SUCCESS&FAILURE*******/
 
 function success(dragged) {
   let newPosition = dragged.parentNode;
-
+  saveScore(playerScore+1);
   setTimeout(function () {
     gameLine.insertBefore(getHtmlDropZone(), newPosition);
     newPosition.after(getHtmlDropZone());

@@ -7,5 +7,6 @@ export const buttonRules = document.getElementById("rules");
 export const buttonReset = document.getElementById("reset");
 export const buttonBack = document.getElementById("back");
 export const ruleBox = document.getElementById("rules-box");
+export const score = document.getElementById("score");
 
 

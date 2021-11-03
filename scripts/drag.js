@@ -1,6 +1,6 @@
 import { compareYears } from "./compare.js";
 import { getNewFlipCardInner } from "./game.js";
-import { playerHand, gameLine } from "./main.js";
+import { playerHand, gameLine} from "./main.js";
 
 /*VARIABLES*/
 
@@ -10,8 +10,8 @@ var dragged;
 playerHand.addEventListener(
   "dragstart",
   function (event) {
-    dragged = event.target.parentNode.parentNode;
-    event.target.style.opacity = 0.5;
+      dragged = event.target.parentNode.parentNode;
+      event.target.style.opacity = 0.5;
   },
   false
 );
@@ -65,7 +65,7 @@ document.addEventListener(
     if (event.target.className === "dropzone dropzone-hover") {
       dragged.parentNode.appendChild(getNewFlipCardInner());
       dragged.parentNode.removeChild(dragged);
-      
+
       event.target.appendChild(dragged);
       setTimeout(function () {
         dragged.style.transform = "rotateY(180deg)";
