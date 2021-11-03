@@ -1,5 +1,5 @@
 import { cards } from "./cards.js";
-import { buttonStart,gameLine,intialSpaces } from "./main.js";
+import { buttonStart, gameLine, intialSpaces,buttonsReset} from "./main.js";
 
 /*VARIABLES*/
 
@@ -28,9 +28,9 @@ export function initialHand() {
   }
 }
 
-function visibleHand(){
+function visibleHand() {
   for (let i = 0; i < intialSpaces.length; i++) {
-    intialSpaces[i].style.opacity=1;
+    intialSpaces[i].style.opacity = 1;
   }
 }
 
@@ -70,6 +70,11 @@ function getNewFlipCardBack(card) {
   return newFlipCardBack;
 }
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
 
 /****START GAME********/
 buttonStart.addEventListener(
@@ -84,6 +89,15 @@ buttonStart.addEventListener(
   },
   false
 );
-window.onload = function() {
+window.onload = function () {
   initialHand();
 };
+
+/********RESET GAME*********/
+buttonsReset.addEventListener(
+  "click",
+  function () {
+    removeAllChildNodes(gameLine);
+  },
+  false
+);

@@ -16,7 +16,7 @@ playerHand.addEventListener(
   false
 );
 
-playerHand.addEventListener(
+document.addEventListener(
   "dragend",
   function (event) {
     event.target.style.opacity = "";
@@ -63,7 +63,6 @@ document.addEventListener(
   function (event) {
     event.preventDefault();
     if (event.target.className === "dropzone dropzone-hover") {
-      event.target.style.background = "";
       dragged.parentNode.appendChild(getNewFlipCardInner());
       dragged.parentNode.removeChild(dragged);
       
