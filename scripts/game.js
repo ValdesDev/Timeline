@@ -76,7 +76,13 @@ function removeAllChildNodes(parent) {
   }
 }
 
-/****START GAME********/
+function removePlayerHand(intialSpaces) {
+  for (let i = 0; i < intialSpaces.length; i++) {
+    removeAllChildNodes(intialSpaces[i]);
+  }
+}
+
+/****START GAME****/
 buttonStart.addEventListener(
   "click",
   function () {
@@ -98,6 +104,7 @@ buttonsReset.addEventListener(
   "click",
   function () {
     removeAllChildNodes(gameLine);
+    removePlayerHand(intialSpaces);
   },
   false
 );
