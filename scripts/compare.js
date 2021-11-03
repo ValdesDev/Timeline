@@ -1,7 +1,10 @@
 import { getHtmlDropZone } from "./game.js";
-import { gameLine, score } from "./main.js";
+import { showGameOver } from "./gameover.js";
+import { gameLine, score, lives } from "./main.js";
+
 
 let playerScore = 0;
+export let playerLives = 3;
 
 export function compareYears(dragged) {
   const droppedYear = Number(dragged.getElementsByTagName("img")[0].id);
@@ -23,18 +26,30 @@ export function compareYears(dragged) {
   }
 }
 
-export function saveScore(newScore){
+export function saveScore(newScore) {
   playerScore = newScore;
   score.innerText = playerScore;
 }
 
+export function resetLives(){
+  playerLives = 3;
+}
+
+function loseLive(newLife) {
+  playerLives = newLife;
+  lives[playerLives].style.height = "2.5em";
+  lives[playerLives].style.opacity = 0;
+  setTimeout(function () {
+    lives[playerLives].style.height = "";
+  }, 500);
+}
 
 
 /*****FUNCTIONS SUCCESS&FAILURE*******/
 
 function success(dragged) {
   let newPosition = dragged.parentNode;
-  saveScore(playerScore+1);
+  saveScore(playerScore + 1);
   setTimeout(function () {
     gameLine.insertBefore(getHtmlDropZone(), newPosition);
     newPosition.after(getHtmlDropZone());
@@ -48,6 +63,8 @@ function success(dragged) {
 function failure(dragged) {
   setTimeout(function () {
     dragged.style.transform = "rotateZ(-30deg) rotateY(180deg)";
+    loseLive(playerLives - 1);
+    showGameOver(playerLives,playerScore);
   }, 1000);
   setTimeout(function () {
     dragged.parentNode.classList.remove("dropzone-hover");

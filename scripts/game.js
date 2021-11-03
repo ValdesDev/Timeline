@@ -1,6 +1,12 @@
 import { cards } from "./cards.js";
-import { buttonStart,buttonReset,gameLine, intialSpaces} from "./main.js";
-import {saveScore} from "./compare.js";
+import {
+  buttonStart,
+  buttonReset,
+  gameLine,
+  intialSpaces,
+  lives,
+} from "./main.js";
+import { saveScore, playerLives, resetLives } from "./compare.js";
 
 /*VARIABLES*/
 
@@ -83,11 +89,17 @@ function removePlayerHand(intialSpaces) {
     intialSpaces[i].style.opacity = 0;
   }
 }
+function showLives(playerLives) {
+  for (let i = 0; i < playerLives; i++) {
+    lives[i].style.opacity = "";
+  }
+}
 
 /****START GAME****/
 buttonStart.addEventListener(
   "click",
-  function () {
+  function (event) {
+    event.target.disabled = true;
     gameLine.appendChild(getHtmlBackImg(getRandomCard(cardArray)));
     visibleHand();
     setTimeout(function () {
@@ -102,16 +114,24 @@ window.onload = function () {
 };
 
 /********RESET GAME*********/
+
+export function reset() {
+  buttonStart.disabled = false;
+  removeAllChildNodes(gameLine);
+  removePlayerHand(intialSpaces);
+  saveScore(0);
+  resetLives();
+  showLives(playerLives);
+  cardArray = cards.map((card) => card);
+  setTimeout(function () {
+    initialHand();
+  }, 1000);
+}
+
 buttonReset.addEventListener(
   "click",
   function () {
-    removeAllChildNodes(gameLine);
-    removePlayerHand(intialSpaces);
-    saveScore(0);
-    cardArray = cards.map((card) => card);
-    setTimeout(function(){
-      initialHand();
-    },1000)
+    reset();
   },
   false
 );

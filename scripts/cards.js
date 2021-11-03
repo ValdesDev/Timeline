@@ -100,5 +100,86 @@ export let cards = [
     name: "Roma comienza la conquista de la Peninsula",
     image: "images/cards/Roma B.png",
     imageBack: "images/cards/Roma A.png",
+  },
+  //17
+  {
+    year: 1986,
+    name: "España entra en la OTAN",
+    image:"images/cards/otan B.png",
+    imageBack:"images/cards/otan A.png"
+  },
+  {
+    year: 1987,
+    name: "Atentado de ETA en Hipercor",
+    image:"images/cards/hipercor B.png",
+    imageBack:"images/cards/hipercor A.png"
+  },
+  {
+    year: 1992,
+    name: "Olimpiadas de Barcelona y EXPO en Sevilla",
+    image:"images/cards/olimp B.png",
+    imageBack:"images/cards/olimp A.png"
+  },
+  {
+    year: 2002,
+    name: "Entra en vigor el EURO",
+    image:"images/cards/euro B.png",
+    imageBack:"images/cards/euro A.png"
+  },
+  {
+    year: 2004,
+    name: "Atentado 11 Marzo en Atocha",
+    image:"images/cards/atocha B.png",
+    imageBack:"images/cards/atocha A.png",
+  },
+  {
+    year: 2008,
+    name: "Crisis Economica",
+    image:"images/cards/crisis B.png",
+    imageBack:"images/cards/crisis A.png"
+  },
+  //23
+  {
+    year: 1931,
+    name: "2 Republica española",
+    image:"images/cards/seg rep B.png",
+    imageBack:"images/cards/seg rep A.png",
+  },
+  {
+    year: 1936,
+    name: "Guerra civil española",
+    image:"images/cards/civil B.png",
+    imageBack:"images/cards/civil A.png",
+  },
+  {
+    year: 1937,
+    name: "Bombardeo de Guernica",
+    image:"images/cards/guernica B.png",
+    imageBack:"images/cards/guernica A.png"
+  },
+  {
+    year: 1939,
+    name: "Comienza dictadura de franco",
+    image:"images/cards/franco B.png",
+    imageBack:"images/cards/franco A.png"
+  },
+  {
+    year: 1941,
+    name: "Creacion de la RENFE",
+    image:"images/cards/renfe B.png",
+    imageBack:"images/cards/renfe A.png",
+  },
+  {
+    year: 1955,
+    name: "España ingresa en la ONU",
+    image:"images/cards/onu B.png",
+    imageBack:"images/cards/onu A.png",
+  },
+  {
+    year: 1959,
+    name: "Creacion de ETA",
+    image:"images/cards/eta B.png",
+    imageBack:"images/cards/eta A.png",
   }
+  //30
 ];

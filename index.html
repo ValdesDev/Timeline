@@ -26,13 +26,22 @@
         <button class="btn" id="back">Volver</button>
       </div>
     </div>
+    <div id="end-game">
+      <div class="gameover">
+      <h1>Fin del juego</h1>
+      <p id="feedback"></p>
+      <button class="btn" id="again">Nueva partida</button>
+      </div>
+    </div>
+    
     <div class="main">
       <header>
         <div class="buttons-container">
-          <button class="btn" id="start">Jugar!</button>
+          <button class="btn" id="start">¡Jugar!</button>
           <button class="btn" id="reset">Reinicio</button>
           <button class="btn" id="rules">Reglas</button>
         </div>
+        
 
         <img
           id="Logo"
@@ -42,6 +51,12 @@
 
         <div class="score-box">
           <div>Puntuación: <span id="score">0</span></div>
+          <div class="live-box">
+            Vidas:
+            <img class="live" src="images/Scroll-clock .png" alt="vida" />
+            <img class="live" src="images/Scroll-clock .png" alt="vida" />
+            <img class="live" src="images/Scroll-clock .png" alt="vida" />
+          </div>
         </div>
       </header>
       <div id="game-line"></div>
@@ -57,6 +72,7 @@
     <script src="scripts/rules.js" type="module"></script>
     <script src="scripts/compare.js" type="module"></script>
     <script src="scripts/drag.js" type="module"></script>
+    <script src="scripts/gameover.js" type="module"></script>
     <script src="scripts/game.js" type="module"></script>
   </body>
 </html>
