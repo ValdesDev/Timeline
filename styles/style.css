@@ -8,6 +8,8 @@ main {
   font-family: "Averia Serif Libre", cursive;
 }
 
+/******RULES*********/
+
 #rules-box {
   position: absolute;
   display: flex;
@@ -19,8 +21,20 @@ main {
   z-index: 1;
 }
 
+#rules-box ul {
+  text-align:center;
+  list-style-type:none;
+}
+
+#rules-box li {
+  padding: 5px;
+  font-size: large;
+}
+
 .rules {
   background-color: white;
+  border-style: solid;
+    border-color: #e9b90f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,10 +43,13 @@ main {
   border-radius: 15px;
 }
 .mini-logo {
-  width: 23em;
-  height: 13em;
+  width: 16em;
+  height: 7em;
+  padding: 0.5em;
   object-fit: contain;
 }
+
+/*******GAMEOVER*******/
 
 #end-game {
   position: absolute;
@@ -46,7 +63,10 @@ main {
 }
 
 .gameover {
+  font-size: larger;
   background-color: white;
+  border-style: solid;
+    border-color: #e9b90f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,7 +235,7 @@ div::-webkit-scrollbar-thumb {
 }
 
 .btn:hover {
-  background-color: #196a9c; 
+  background-color: #196a9c;
   color: white;
 }
 button#start:disabled {
