@@ -34,7 +34,7 @@ main {
 .rules {
   background-color: white;
   border-style: solid;
-    border-color: #e9b90f;
+  border-color: #e9b90f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,7 @@ main {
   font-size: larger;
   background-color: white;
   border-style: solid;
-    border-color: #e9b90f;
+  border-color: #e9b90f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,6 +105,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url();
   background: rgb(25, 106, 156);
   background: linear-gradient(
     0deg,
