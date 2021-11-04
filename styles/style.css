@@ -125,12 +125,12 @@ header {
 #player-hand {
   display: flex;
   justify-content: center;
-  background: rgb(26, 153, 232);
+  /* background: rgb(26, 153, 232);
   background: linear-gradient(
     0deg,
     rgba(26, 153, 232, 1) 0%,
     rgba(25, 106, 156, 1) 100%
-  );
+  ); */
 }
 
 /*******CARDS******/
