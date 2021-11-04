@@ -2,6 +2,7 @@ body {
   width: 100%;
   margin: 0;
   font-family: "Averia Serif Libre", cursive;
+  background-image: url("../images/backGround.jpg");
 }
 main {
   width: 100%;
@@ -22,8 +23,8 @@ main {
 }
 
 #rules-box ul {
-  text-align:center;
-  list-style-type:none;
+  text-align: center;
+  list-style-type: none;
 }
 
 #rules-box li {
@@ -102,17 +103,16 @@ header {
 
 #game-line {
   height: 400px;
-  display: flex;
+  width: 100vw;
+  white-space: nowrap;
   justify-content: center;
+  margin:0 auto;
+  text-align: center;
   align-items: center;
-  background-image: url();
-  background: rgb(25, 106, 156);
-  background: linear-gradient(
-    0deg,
-    rgba(25, 106, 156, 1) 0%,
-    rgba(233, 185, 15, 1) 100%
-  );
   overflow: auto;
+}
+#game-line > div {
+  display: inline-block;
 }
 
 .initial-position {
@@ -125,11 +125,11 @@ header {
 #player-hand {
   display: flex;
   justify-content: center;
-  background: rgb(26, 153, 232);
+  /* background: rgb(26, 153, 232);
   background: linear-gradient(
     0deg,
     rgba(26, 153, 232, 1) 0%,
-    rgba(25, 106, 156, 1) 100%
+    rgba(25, 106, 156, 1) 100% */
   );
 }
 
@@ -144,7 +144,6 @@ img.card {
   background-color: transparent;
   height: 300px;
   width: 200px;
-  min-width: 200px;
   border-radius: 15px;
 }
 
@@ -180,7 +179,6 @@ img.card {
 .dropzone {
   height: 300px;
   width: 58px;
-  min-width: 58px;
   background-image: url("../images/timeline-round.png");
   background-size: 50%;
   background-position: center;
