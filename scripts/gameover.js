@@ -16,10 +16,10 @@ function getFeedback(score) {
   if (score > 10 && score <= 20) {
     return "¡Excelente resultado!";
   }
-  if (score > 20 && score < 39) {
+  if (score > 20 && score < 44) {
     return "¡Enhorabuena!";
   }
-  if (score === 39) {
+  if (score === 44) {
     return "¡Ave Experto, el creador del juego te saluda!";
   } else {
     return "Quizá quieras intentarlo de nuevo";
