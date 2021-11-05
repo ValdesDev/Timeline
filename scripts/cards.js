@@ -26,7 +26,7 @@ export let cards = [
   {
     name: "Comienza el Ducado de Alba",
     year: 1472,
-    image: "images/cards/albaB.png",
+    image: "images/cards/albaBB.png",
     imageBack: "images/cards/albaA.png"
   },
   {
