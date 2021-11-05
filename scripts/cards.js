@@ -38,7 +38,7 @@ export let cards = [
   {
     year: -290000000,
     name: "Se forma la peninsula Iberica",
-    image: "images/cards/inicioB.png",
+    image: "images/cards/inicioBB.png",
     imageBack: "images/cards/inicioA.png"
   },
   {
